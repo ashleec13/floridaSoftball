@@ -1,0 +1,31 @@
+nav{
+    background-color: #002c88;
+    color: #fa440e;
+    text-decoration: none;
+}
+
+nav a,
+.nav-link {
+    color: #fa440e !important;
+}
+
+nav a:hover,
+.nav-link:hover {
+    color: #ff7a2a !important;
+}
+
+nav {
+    position: relative;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-logo img {
+    width: 40px;
+    height: auto;
+}
