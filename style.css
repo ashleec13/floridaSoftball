@@ -1,12 +1,52 @@
-nav{
+body {
+    font-family: "tiffin-latin-variable", sans-serif;
+    font-variation-settings: "wght" 300;
+    margin: 0;
+    background-color: white;
+}
+
+/* ===================== */
+/* NAVBAR */
+/* ===================== */
+
+.nav-logo img {
+    width: 65px;
+    height: auto;
+    transition: transform 1s ease-out;
+}
+
+.nav-logo img:hover {
+    animation: spinLogo 1s linear infinite;
+}
+
+.nav-logo img:not(:hover) {
+    animation: none;
+    transform: rotate(0deg);
+}
+
+@keyframes spinLogo {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+nav {
     background-color: #002c88;
-    color: #fa440e;
-    text-decoration: none;
+    padding: 1.5rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 nav a,
 .nav-link {
     color: #fa440e !important;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+    font-variation-settings: "wght" 700;
 }
 
 nav a:hover,
@@ -14,18 +54,188 @@ nav a:hover,
     color: #ff7a2a !important;
 }
 
-nav {
-    position: relative;
-}
-
 .nav-logo {
     position: absolute;
-    left: 1rem;
+    left: 1.5rem;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.nav-logo img {
-    width: 40px;
+/* ===================== */
+/* TOP CAROUSEL */
+/* ===================== */
+
+#floridaCarousel {
+    width: 90%;
+    margin: 2rem auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.carousel-item img {
+    width: 100%;
     height: auto;
+    object-fit: contain;
+}
+
+/* ===================== */
+/* INTRO SECTION */
+/* ===================== */
+
+.intro-section {
+    padding: 3rem 1rem 5rem;
+}
+
+.intro-section h1 {
+    color: #002c88;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.intro-section p {
+    color: #444;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 1rem auto 0;
+}
+
+/* ===================== */
+/* LAYOUT */
+/* ===================== */
+
+.container {
+    position: relative;
+    width: min(100%, 1200px);
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.box {
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* ===================== */
+/* ABOUT BOX (NOW ORANGE) */
+/* ===================== */
+
+.team-box {
+    width: min(480px, 100%);
+    min-height: 420px;
+
+    background-color: #fa4616; /* orange */
+    color: #fff;
+
+    border: 2px solid #002c88; /* thin blue border */
+
+    z-index: 1;
+    overflow-y: auto;
+    border-radius: 20px;
+
+    padding: 30px 25px;
+    flex: 1;
+}
+
+.team-box h2 {
+    margin-top: 0;
+    color: #002c88;
+}
+
+.team-box p {
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ===================== */
+/* CAROUSEL BOX (MATCHED) */
+/* ===================== */
+
+.carousel-box {
+    width: min(520px, 100%);
+
+    background-color: #fa4616; /* same orange */
+    border: 2px solid #002c88; /* same blue border */
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    border-radius: 20px;
+
+    flex: 1;
+
+    min-height: unset;
+    padding: 10px;
+}
+
+/* SECOND CAROUSEL */
+.about-carousel {
+    width: 100%;
+    margin: 0;
+}
+
+.about-carousel .carousel-item img {
+    width: 100%;
+    height: 450px; /* bigger = no dead space */
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* arrows */
+.about-carousel .carousel-control-prev-icon,
+.about-carousel .carousel-control-next-icon {
+    filter: invert(1);
+}
+
+/* ===================== */
+/* SCROLLBAR */
+/* ===================== */
+
+.team-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.team-box::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 992px) {
+
+    nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .nav-logo {
+        position: static;
+        transform: none;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 1.5rem 1rem 3rem;
+    }
+
+    .team-box,
+    .carousel-box {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .carousel-box {
+        box-shadow: none;
+    }
 }
